@@ -1,0 +1,15 @@
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/daniyal/.asdf/installs/ruby/3.0.3/bin/ruby -I /Users/daniyal/.asdf/installs/ruby/3.0.3/lib/ruby/3.0.0 -r ./siteconf20220201-81354-pzjpcm.rb extconf.rb
+creating Makefile
+
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20220201-81354-3a80ug/skiptrace/internal

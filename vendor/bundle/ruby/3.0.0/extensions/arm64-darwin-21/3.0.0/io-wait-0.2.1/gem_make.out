@@ -1,0 +1,18 @@
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/io-wait-0.2.1/ext/io/wait
+/Users/daniyal/.asdf/installs/ruby/3.0.3/bin/ruby -I /Users/daniyal/.asdf/installs/ruby/3.0.3/lib/ruby/3.0.0 -r ./siteconf20220201-81354-tcqed2.rb extconf.rb
+checking for rb_io_wait()... yes
+checking for sys/ioctl.h... yes
+checking for FIONREAD in sys/ioctl.h,sys/ioctl.h... yes
+creating Makefile
+
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/io-wait-0.2.1/ext/io/wait
+make DESTDIR\= clean
+
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/io-wait-0.2.1/ext/io/wait
+make DESTDIR\=
+compiling wait.c
+linking shared-object io/wait.bundle
+
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/io-wait-0.2.1/ext/io/wait
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 wait.bundle ./.gem.20220201-81354-mnco5d/io

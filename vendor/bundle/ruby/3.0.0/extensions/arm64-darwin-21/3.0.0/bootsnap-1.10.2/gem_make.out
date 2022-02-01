@@ -1,0 +1,15 @@
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.10.2/ext/bootsnap
+/Users/daniyal/.asdf/installs/ruby/3.0.3/bin/ruby -I /Users/daniyal/.asdf/installs/ruby/3.0.3/lib/ruby/3.0.0 -r ./siteconf20220201-81354-8o9smh.rb extconf.rb
+creating Makefile
+
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.10.2/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.10.2/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/daniyal/Documents/chatApp/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.10.2/ext/bootsnap
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20220201-81354-d3rgtq/bootsnap
