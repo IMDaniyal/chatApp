@@ -1,12 +1,64 @@
-<h1 class="text-3xl font-bold underline" >Chat App</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<p class="navbar-text">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatting App</title>
+  <link rel="stylesheet" href="dist/styles.css" />
+  <script src="dist/script.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
+    <div class="flex items-center">
+      <img src="<%= asset_path('chat.jpg') %>" class="h-12" />
+      Chatting App
+    </div>
     <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.full_name %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <button class="py-2 px-4 text-white bg-black rounded-3xl">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      </button>
     <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <div class="font-montserrat hidden md:block">
+        <button class="mr-6">
+          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+        </button>
+        <button class="py-2 px-4 text-white bg-black rounded-3xl">
+          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
+        </button>
+      </div>
     <% end %>
-</p>
+  </nav>
+
+  <!-- Hero -->
+  <section
+    class=" md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
+    <div class="md:flex-1 md:mr-10">
+      <h1 class="font-pt-serif text-5xl font-bold mb-7">
+        Chat easily and securely
+        <span class="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100%">
+          with anyone.
+        </span>
+      </h1>
+      <p class="font-pt-serif font-normal mb-7">
+        A new way to meet and chat with people.
+      </p>
+      <% if user_signed_in? %>
+        <div class="font-montserrat">
+          <button class="bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2">
+            <%= link_to "Chat Now", rooms_path, :class => 'navbar-link'  %>
+          </button>
+        </div>
+      <% end %>
+    </div>
+    <div class="flex justify-around md:block mt-8 md:mt-0 md:flex-1">
+      
+      <img src="<%= asset_path('chatting-people.jpeg') %>" class="h-50" />
+      
+    </div>
+  </section>
+</body>
+
+</html>
