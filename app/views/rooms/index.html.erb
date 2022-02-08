@@ -1,0 +1,45 @@
+<body>
+  <nav class="flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
+    <div class="flex items-center">
+        <a href="/main/index" class="bg-black text-white font-bold text-xl p-4">Chat</a>
+    </div>
+    <div class="font-montserrat hidden md:block">
+      <button class="mr-6">
+        Hi, <strong><%= current_user.full_name %></strong>
+      </button>
+      <button class="py-2 px-4 text-white bg-black rounded-3xl">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      </button>
+    </div>
+  </nav>
+
+  <body class="bg-white font-family-karla h-screen">
+
+    <div class="w-full flex flex-wrap">
+
+        <div class="w-full md:w-1/4 flex flex-col text-center bg-slate-200">
+          <h1><strong> Users </strong></h1>
+          <div>
+            <%= render "rooms/users", users: @users %>
+          </div>
+        </div>
+
+        <div class="w-3/4 shadow-2xl h-full bg-slate-800 text-gray-100">
+            <% if @single_room %>
+              <%= turbo_stream_from @single_room %>
+              <div id="messages", class = "mb-14">
+                <h4 class="text-center"> <%= @user&.username  %> </h4>
+                <%= render @messages %>
+              </div>
+              <div class="form-group w-8/12 fixed bottom-0">
+                <%= form_with(model: [@single_room ,@message], remote: true, class: "d-flex" ) do |f| %>
+                  <%= f.text_field :content, id: 'chat-text', class: "form-control w-10/12 mr-5 text-black	", autocomplete: 'off' %>
+                  <button class="rounded-full bg-blue-100 text-black p-3"><%= f.submit "Send" %></button>
+                <% end %>
+              </div>
+            <% end %>
+        </div>
+    </div>
+
+  </body>
+</body>

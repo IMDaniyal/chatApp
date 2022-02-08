@@ -1,0 +1,8 @@
+ <% unless message.nil? %>
+    <div class="px-2">
+        <div class="w-fit max-w-[40%] p-5 rounded-[12px] mb-5 bg-indigo-50 text-black" >
+            <p class = "text-sm font-light text-gray-500"><%= message.user.username%></p> 
+            <%= message.content %>
+        </div>
+    </div>
+<% end %>
