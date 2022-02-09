@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'notifications/index', as: 'notifications'
+  get '/notification/:id/:room_id', to: 'notifications#mark_read', as: 'mark_notification_read'
   resources :rooms do
     resources :messages
   end

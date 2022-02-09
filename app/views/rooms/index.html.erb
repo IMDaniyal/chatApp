@@ -1,18 +1,6 @@
 <body>
-  <nav class="flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
-    <div class="flex items-center">
-        <a href="/main/index" class="bg-black text-white font-bold text-xl p-4">Chat</a>
-    </div>
-    <div class="font-montserrat hidden md:block">
-      <button class="mr-6">
-        Hi, <strong><%= current_user.full_name %></strong>
-      </button>
-      <button class="py-2 px-4 text-white bg-black rounded-3xl">
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      </button>
-    </div>
-  </nav>
-
+  
+  <%= render "layouts/navbar", current_user: current_user %>
   <body class="bg-white font-family-karla h-screen">
 
     <div class="w-full flex flex-wrap">
@@ -27,7 +15,7 @@
         <div class="w-3/4 shadow-2xl h-full bg-slate-800 text-gray-100">
             <% if @single_room %>
               <%= turbo_stream_from @single_room %>
-              <div id="messages", class = "mb-14">
+              <div id="messages", class = "mb-13 pb-7">
                 <h4 class="text-center"> <%= @user&.username  %> </h4>
                 <%= render @messages %>
               </div>
